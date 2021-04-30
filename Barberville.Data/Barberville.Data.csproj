@@ -55,12 +55,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202104290152288_InitialCreate.cs" />
+    <Compile Include="Migrations\202104290152288_InitialCreate.Designer.cs">
+      <DependentUpon>202104290152288_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104290223552_initial migration of Barberville.cs" />
+    <Compile Include="Migrations\202104290223552_initial migration of Barberville.Designer.cs">
+      <DependentUpon>202104290223552_initial migration of Barberville.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104290152288_InitialCreate.resx">
+      <DependentUpon>202104290152288_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290223552_initial migration of Barberville.resx">
+      <DependentUpon>202104290223552_initial migration of Barberville.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
