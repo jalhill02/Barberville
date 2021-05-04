@@ -61,5 +61,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Barbervill.Models\Barbervill.Models.csproj">
+      <Project>{ed717776-bf5f-4d76-976b-a036232c1743}</Project>
+      <Name>Barbervill.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Barberville.Data\Barberville.Data.csproj">
+      <Project>{5e372133-ac91-42c9-9d4d-ad8d2d6ad3ff}</Project>
+      <Name>Barberville.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

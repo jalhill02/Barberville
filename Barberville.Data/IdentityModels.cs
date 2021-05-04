@@ -33,7 +33,7 @@ namespace Barberville.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Note> Notes { get; set; }
+        public DbSet<Barber> Barbers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
