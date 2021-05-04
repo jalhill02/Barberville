@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Barberville.Data
 {
-    public class Note
+    public class Appointment
     {
         [Key]
-        public int NoteId { get; set; }
+        public int AppointmentId { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }

@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NoteListItem.cs" />
+    <Compile Include="BarberCreate.cs" />
+    <Compile Include="BarberDetails.cs" />
+    <Compile Include="BarberEdit.cs" />
+    <Compile Include="BarberList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
