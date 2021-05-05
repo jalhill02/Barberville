@@ -7,20 +7,21 @@ using System.Threading.Tasks;
 
 namespace Barberville.Data
 {
-    public class Note
+    class shop
     {
         [Key]
-        public int NoteId { get; set; }
+        public int ShopId { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }
-        [Required]
-        public string Title { get; set; }
-        [Required]
-        public string Content { get; set; }
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
 
-        public DateTimeOffset? ModifiedUtc { get; set; }
+        [Required]
+        public string ShopName { get; set; }
+
+        [Required]
+        public string ShopLocation { get; set; }
+        public string Menu { get; set; }
+
+        public int? Services { get; set; }
     }
 }
