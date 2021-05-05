@@ -22,6 +22,6 @@ namespace Barberville.Data
         public string ShopLocation { get; set; }
         public string Menu { get; set; }
 
-        public int? Services { get; set; }
+        public string Services { get; set; }
     }
 }
