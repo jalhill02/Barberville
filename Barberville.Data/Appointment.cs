@@ -15,7 +15,7 @@ namespace Barberville.Data
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
-        public string Title { get; set; }
+        public string Service { get; set; }
         [Required]
         public string Content { get; set; }
         [Required]
