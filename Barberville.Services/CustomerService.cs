@@ -58,15 +58,15 @@ namespace Barberville.Services
             }
         }
 
-        public BarberDetails GetNoteById(int id)
+        public CustomerDetails GetNoteById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Barbers.Single(e => e.BarberId == id && e.OwnerId == _userId);
+                var entity = ctx.Customer.Single(e => e.Cus == id && e.OwnerId == _userId);
 
-                return new BarberDetails
+                return new CustomerDetails
                 {
-                    BarberId = entity.BarberId,
+                    CustomerId = entity.CustomerId,
                     FullName = entity.FullName,
                     ShopName = entity.ShopName,
                     ShopLocation = entity.ShopLocation,
