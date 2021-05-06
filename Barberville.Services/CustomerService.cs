@@ -62,7 +62,7 @@ namespace Barberville.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Customer.Single(e => e.Cus == id && e.OwnerId == _userId);
+                var entity = ctx.Customers.Single(e => e.CustomerId == id && e.OwnerId == _userId);
 
                 return new CustomerDetails
                 {
