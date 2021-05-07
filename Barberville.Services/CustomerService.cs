@@ -58,7 +58,7 @@ namespace Barberville.Services
             }
         }
 
-        public CustomerDetails GetNoteById(int id)
+        public CustomerDetails GetCustomerById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {

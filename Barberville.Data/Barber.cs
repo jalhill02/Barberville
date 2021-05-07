@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +27,9 @@ namespace Barberville.Data
         [Display(Name = "Full Name")]
         public string FullName { get; }
 
-        [Required]
+        [ForeignKey(nameof(shop))]
         public int ShopId { get; set; }
+
 
         [Required]
         public string ShopName { get; set; }
@@ -34,5 +37,13 @@ namespace Barberville.Data
         [Required]
         public string ShopLocation { get; set; }
         public string Menu { get; set; }
+
+        [DefaultValue(false)]
+        public bool IsStarred { get; set; }
+
+        [ForeignKey(nameof(shop))]
+        public int CategoryId { get; set; }
+
+        public virtual shop shop { get; set; }
     }
 }

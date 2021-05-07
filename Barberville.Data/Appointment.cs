@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,5 +33,22 @@ namespace Barberville.Data
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
+
+        [ForeignKey(nameof(shop))]
+        public int ShoId { get; set; }
+
+        public virtual shop shop { get; set; }
+
+        [ForeignKey(nameof(Barber))]
+        public int BarberId { get; set; }
+
+        public virtual Barber Barber { get; set; }
+
+        [ForeignKey(nameof(Customer))]
+        public int CustomerId { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+
     }
 }

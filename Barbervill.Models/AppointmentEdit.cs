@@ -9,14 +9,18 @@ namespace Barbervill.Models
 {
     public class AppointmentEdit
     {
-        public int BarberName { get; set; }
+        public int AppointmentId { get; set; }
 
-        public string ShopName { get; set; }
+        public DateTime dateTime { get; set; }
+
+        public string ShopLocation { get; set; }
        
-        public string services { get; set; }
+        public string Services { get; set; }
+
+        public string Customer { get; set; }
 
         [Display(Name = "Appointment Time")]
-        public DateTimeOffset DateTime { get; set; }
+        public DateTime DateTime { get; set; }
 
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Barberville.Data
 {
-    class shop
+    public class shop
     {
         [Key]
         public int ShopId { get; set; }
@@ -20,7 +20,8 @@ namespace Barberville.Data
 
         [Required]
         public string ShopLocation { get; set; }
-        public string Menu { get; set; }
+
+     
 
         public string Services { get; set; }
     }
