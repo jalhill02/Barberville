@@ -13,11 +13,12 @@ namespace Barbervill.Models
 
         public DateTime dateTime { get; set; }
 
-        public string ShopLocation { get; set; }
+        public int ShopId { get; set; }
        
         public string Services { get; set; }
 
-        public string Customer { get; set; }
+        public int CustomerId { get; set; }
+        public int BarberId { get; set; }
 
         [Display(Name = "Appointment Time")]
         public DateTime DateTime { get; set; }

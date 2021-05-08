@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Barberville.Services
 {
-    class BarberService
+    public class BarberService
     {
         private readonly Guid _userId;
         public BarberService(Guid userId)
@@ -24,8 +24,8 @@ namespace Barberville.Services
 
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    ShopName = model.ShopName,
-                    ShopLocation = model.ShopAddress
+                    ShopId = model.ShopId,
+             
 
                 };
 
@@ -50,15 +50,14 @@ namespace Barberville.Services
                                 {
                                     BarberId = e.BarberId,
                                     FullName = e.FullName,
-                                    ShopName = e.ShopLocation
+                                    ShopName = e.Shop.ShopName
                                 }
                         );
 
                 return query.ToArray();
             }
         }
-
-        public BarberDetails GetNoteById(int id)
+        public BarberDetails GetBarberById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -68,8 +67,7 @@ namespace Barberville.Services
                 {
                     BarberId = entity.BarberId,
                     FullName = entity.FullName,
-                    ShopName = entity.ShopName,
-                    ShopLocation = entity.ShopLocation,
+                    
                     
                 };
             }
@@ -81,9 +79,9 @@ namespace Barberville.Services
             {
                 var entity = ctx.Barbers.Single(e => e.BarberId == model.BarberId && e.OwnerId == _userId);
 
-                entity.BarberId = model.BarberId;
-                entity.ShopName = model.ShopName;
-                entity.ShopLocation = model.ShopLocation;
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.ShopId = model.ShopId;
                 return ctx.SaveChanges() == 1;
 
 

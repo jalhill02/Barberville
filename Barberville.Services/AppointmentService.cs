@@ -22,10 +22,10 @@ namespace Barberville.Services
                 new Appointment()
                 {
 
-                    Time = model.DateTime,
-                    Barber = model.BarberName,
-                    shopLocation = model.shopLocation,
-                    Customer = model.CustomerName
+                    Time = model.Time,
+                    BarberId = model.BarberId,
+                    ShopId = model.ShopId,
+                    CustomerId = model.CustomerId
 
                 };
 
@@ -48,9 +48,9 @@ namespace Barberville.Services
                             e =>
                                 new AppointmentItemList
                                 {
-                                    CreatedUtc = e.shop,
-                                    FullName = e.Barber,
-                                    ShopLocation = e.s
+                                    Time = e.Time,
+                                    CustomerName = e.Customer.FullName,
+                                    ShopLocation = e.Shop.ShopLocation
                                 }
                         );
 
@@ -58,7 +58,7 @@ namespace Barberville.Services
             }
         }
 
-        public BarberDetails GetNoteById(int id)
+        public BarberDetails GetAppointmentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -68,8 +68,8 @@ namespace Barberville.Services
                 {
                     BarberId = entity.BarberId,
                     FullName = entity.FullName,
-                    ShopName = entity.ShopName,
-                    ShopLocation = entity.ShopLocation,
+                    ShopName = entity.Shop.ShopName,
+                    ShopLocation = entity.Shop.ShopLocation,
 
                 };
             }
@@ -83,7 +83,7 @@ namespace Barberville.Services
 
                 entity.AppointmentId = model.AppointmentId;
                 entity.Time = model.DateTime;
-                entity.shopLocation = model.ShopLocation;
+                entity.BarberId = model.BarberId;
                 return ctx.SaveChanges() == 1;
 
 

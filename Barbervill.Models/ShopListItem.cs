@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace Barbervill.Models
 {
-    public class ShopCreate
+    public class ShopListItem
     {
         public int ShopId { get; set; }
+        public string FullName { get; set; }
+
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+       
 
         [Required]
-        [MinLength(2, ErrorMessage = "The store name must be at least 2 Characters.")]
-        [MaxLength(50, ErrorMessage = "There are too many characters in thes field")]
         public string ShopName { get; set; }
 
-        [MaxLength(10000)]
-        public string Services { get; set; }
-
+        [Required]
         public string ShopLocation { get; set; }
-
-        public DateTime CreatedUtc { get; set; }
-
-     
+        public string Menu { get; set; }
     }
 }

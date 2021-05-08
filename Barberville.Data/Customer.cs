@@ -9,11 +9,6 @@ namespace Barberville.Data
         [Key]
         public int CustomerId { get; set; }
 
-        [ForeignKey(nameof(shop))]
-        public int ShopId { get; set; }
-
-        [ForeignKey(nameof(Barber))]
-        public int FullName { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
 
@@ -28,13 +23,11 @@ namespace Barberville.Data
         [Display(Name = "Full Name")]
         public string FullName { get; }
 
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
 
-        [Required]
-        public string ShopName { get; set; }
 
-        [Required]
-        public string ShopLocation { get; set; }
-        public string Menu { get; set; }
+
 
 
 

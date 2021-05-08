@@ -20,11 +20,10 @@ namespace Barberville.Data
         public Guid OwnerId { get; set; }
         [Required, Phone, Display(Name ="Phone number")]
         public string PhoneNumber { get; set; }
+
         [Required]
         public DateTime Time { get; set; }
 
-        [Required]
-        public DateTime Timezone { get; set; }
 
         [Required]
         public string Service { get; set; }
@@ -32,12 +31,13 @@ namespace Barberville.Data
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
+
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        [ForeignKey(nameof(shop))]
-        public int ShoId { get; set; }
+        [ForeignKey(nameof(Shop))]
+        public int ShopId { get; set; }
 
-        public virtual shop shop { get; set; }
+        public virtual shop Shop { get; set; }
 
         [ForeignKey(nameof(Barber))]
         public int BarberId { get; set; }

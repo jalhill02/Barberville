@@ -27,23 +27,14 @@ namespace Barberville.Data
         [Display(Name = "Full Name")]
         public string FullName { get; }
 
-        [ForeignKey(nameof(shop))]
+        [ForeignKey(nameof(Shop))]
         public int ShopId { get; set; }
 
+        public virtual shop Shop { get; set; }
 
-        [Required]
-        public string ShopName { get; set; }
 
-        [Required]
-        public string ShopLocation { get; set; }
-        public string Menu { get; set; }
+        //[DefaultValue(false)]
+        //public bool IsStarred { get; set; }
 
-        [DefaultValue(false)]
-        public bool IsStarred { get; set; }
-
-        [ForeignKey(nameof(shop))]
-        public int CategoryId { get; set; }
-
-        public virtual shop shop { get; set; }
     }
 }

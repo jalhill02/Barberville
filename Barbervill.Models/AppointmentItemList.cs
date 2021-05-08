@@ -11,7 +11,7 @@ namespace Barbervill.Models
     {
 
         public int AppointmentId { get; set; }
-        public string FullName { get; set; }
+        public string CustomerName { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

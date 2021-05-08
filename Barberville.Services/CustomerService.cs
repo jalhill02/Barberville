@@ -24,9 +24,8 @@ namespace Barberville.Services
 
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    ShopName = model.ShopName,
-                    ShopLocation = model.ShopAddress
-
+                    PhoneNumber = model.PhoneNumber,
+                   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,7 +49,7 @@ namespace Barberville.Services
                                 {
                                     CustomerId = e.CustomerId,
                                     FullName = e.FullName,
-                                    ShopName = e.ShopLocation
+                                 
                                 }
                         );
 
@@ -68,38 +67,37 @@ namespace Barberville.Services
                 {
                     CustomerId = entity.CustomerId,
                     FullName = entity.FullName,
-                    ShopName = entity.ShopName,
-                    ShopLocation = entity.ShopLocation,
+                 
 
                 };
             }
         }
 
-        public bool EditBarber(BarberEdit model)
+        public bool EditCustomer(CustomerEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Barbers.Single(e => e.BarberId == model.BarberId && e.OwnerId == _userId);
+                var entity = ctx.Customers.Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
 
-                entity.BarberId = model.BarberId;
-                entity.ShopName = model.ShopName;
-                entity.ShopLocation = model.ShopLocation;
+                entity.CustomerId = model.CustomerId;
+                entity.FirstName = model.FistName;
+                entity.LastName = model.LastName;
                 return ctx.SaveChanges() == 1;
 
 
             };
         }
 
-        public bool DeleteBarber(int barberId)
+        public bool DeleteCustomer(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Barbers
-                        .Single(e => e.BarberId == barberId && e.OwnerId == _userId);
+                        .Customers
+                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
 
-                ctx.Barbers.Remove(entity);
+                ctx.Customers.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

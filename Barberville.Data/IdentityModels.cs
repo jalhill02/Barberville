@@ -36,7 +36,10 @@ namespace Barberville.Data
         public DbSet<Barber> Barbers { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
+
         public DbSet<Appointment> Appointments { get; set; }
+
+        public DbSet<shop> Shops { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

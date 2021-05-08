@@ -15,23 +15,16 @@ namespace Barbervill.Models
         public string CustomerName { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
-        public string BarberName { get; set; }
+        public int BarberId { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
-        public string shopLocation { get; set; }
+        public int ShopId { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
-        public DateTime DateTime { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
+  
         public DateTime Time { get; set; }
 
         [MaxLength(50)]
