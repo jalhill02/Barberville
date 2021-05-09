@@ -5,7 +5,7 @@ namespace Barberville.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Barberville.Data.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Data.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Barberville.Data.Migrations
             ContextKey = "Barberville.Data.ApplicationDbContext";
         }
 
-        protected override void Seed(Barberville.Data.ApplicationDbContext context)
+        protected override void Seed(Data.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -24,7 +24,7 @@ namespace Barberville.Services
 
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    ShopId = model.ShopId,
+                  //  ShopId = model.ShopId,
              
 
                 };
@@ -50,7 +50,7 @@ namespace Barberville.Services
                                 {
                                     BarberId = e.BarberId,
                                     FullName = e.FullName,
-                                    ShopName = e.Shop.ShopName
+                             //       ShopName = e.Shop.ShopName
                                 }
                         );
 
@@ -81,7 +81,7 @@ namespace Barberville.Services
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
-                entity.ShopId = model.ShopId;
+               // entity.ShopId = model.ShopId;
                 return ctx.SaveChanges() == 1;
 
 

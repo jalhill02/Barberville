@@ -27,10 +27,10 @@ namespace Barberville.Data
         [Display(Name = "Full Name")]
         public string FullName { get; }
 
-        [ForeignKey(nameof(Shop))]
-        public int ShopId { get; set; }
+       // [Key, Column(Order = 1)]
+      //  public int ShopId { get; set; }
 
-        public virtual shop Shop { get; set; }
+        //public virtual shop Shop { get; set; }
 
 
         //[DefaultValue(false)]

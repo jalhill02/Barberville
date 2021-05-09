@@ -68,8 +68,8 @@ namespace Barberville.Services
                 {
                     BarberId = entity.BarberId,
                     FullName = entity.FullName,
-                    ShopName = entity.Shop.ShopName,
-                    ShopLocation = entity.Shop.ShopLocation,
+                   // ShopName = entity.Shop.ShopName,
+                    //ShopLocation = entity.Shop.ShopLocation,
 
                 };
             }
