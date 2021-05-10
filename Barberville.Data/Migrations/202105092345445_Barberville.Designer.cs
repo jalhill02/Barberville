@@ -7,13 +7,13 @@ namespace Barberville.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class initialmigrationofBarberville : IMigrationMetadata
+    public sealed partial class Barberville : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialmigrationofBarberville));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Barberville));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104290223552_initial migration of Barberville"; }
+            get { return "202105092345445_Barberville"; }
         }
         
         string IMigrationMetadata.Source

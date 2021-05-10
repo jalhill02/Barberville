@@ -3,22 +3,67 @@ namespace Barberville.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Barberville : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Note",
+                "dbo.Appointment",
                 c => new
                     {
-                        NoteId = c.Int(nullable: false, identity: true),
+                        AppointmentId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
-                        Title = c.String(nullable: false),
-                        Content = c.String(nullable: false),
+                        PhoneNumber = c.String(nullable: false),
+                        Time = c.DateTime(nullable: false),
+                        Service = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        ShopId = c.Int(nullable: false),
+                        BarberId = c.Int(nullable: false),
+                        CustomerId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.NoteId);
+                .PrimaryKey(t => t.AppointmentId)
+                .ForeignKey("dbo.Barber", t => t.BarberId, cascadeDelete: true)
+                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.shop", t => t.ShopId, cascadeDelete: true)
+                .Index(t => t.ShopId)
+                .Index(t => t.BarberId)
+                .Index(t => t.CustomerId);
+            
+            CreateTable(
+                "dbo.Barber",
+                c => new
+                    {
+                        BarberId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.BarberId);
+            
+            CreateTable(
+                "dbo.Customer",
+                c => new
+                    {
+                        CustomerId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        PhoneNumber = c.String(),
+                    })
+                .PrimaryKey(t => t.CustomerId);
+            
+            CreateTable(
+                "dbo.shop",
+                c => new
+                    {
+                        ShopId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        ShopName = c.String(nullable: false),
+                        ShopLocation = c.String(nullable: false),
+                        Services = c.String(),
+                    })
+                .PrimaryKey(t => t.ShopId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -98,16 +143,25 @@ namespace Barberville.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Appointment", "ShopId", "dbo.shop");
+            DropForeignKey("dbo.Appointment", "CustomerId", "dbo.Customer");
+            DropForeignKey("dbo.Appointment", "BarberId", "dbo.Barber");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Appointment", new[] { "CustomerId" });
+            DropIndex("dbo.Appointment", new[] { "BarberId" });
+            DropIndex("dbo.Appointment", new[] { "ShopId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Note");
+            DropTable("dbo.shop");
+            DropTable("dbo.Customer");
+            DropTable("dbo.Barber");
+            DropTable("dbo.Appointment");
         }
     }
 }

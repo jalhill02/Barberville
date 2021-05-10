@@ -10,7 +10,6 @@ namespace Barberville.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Barberville.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Data.ApplicationDbContext context)

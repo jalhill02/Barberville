@@ -58,17 +58,9 @@
     <Compile Include="Barber.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104290152288_InitialCreate.cs" />
-    <Compile Include="Migrations\202104290152288_InitialCreate.Designer.cs">
-      <DependentUpon>202104290152288_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290223552_initial migration of Barberville.cs" />
-    <Compile Include="Migrations\202104290223552_initial migration of Barberville.Designer.cs">
-      <DependentUpon>202104290223552_initial migration of Barberville.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105090107072_Barberville.cs" />
-    <Compile Include="Migrations\202105090107072_Barberville.Designer.cs">
-      <DependentUpon>202105090107072_Barberville.cs</DependentUpon>
+    <Compile Include="Migrations\202105092345445_Barberville.cs" />
+    <Compile Include="Migrations\202105092345445_Barberville.Designer.cs">
+      <DependentUpon>202105092345445_Barberville.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,14 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104290152288_InitialCreate.resx">
-      <DependentUpon>202104290152288_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290223552_initial migration of Barberville.resx">
-      <DependentUpon>202104290223552_initial migration of Barberville.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105090107072_Barberville.resx">
-      <DependentUpon>202105090107072_Barberville.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105092345445_Barberville.resx">
+      <DependentUpon>202105092345445_Barberville.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
