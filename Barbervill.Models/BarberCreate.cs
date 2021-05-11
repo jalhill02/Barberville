@@ -22,7 +22,7 @@ namespace Barbervill.Models
         [Required]
         public int ShopId { get; set; }
 
-        
+        public int BarberId { get; set; }
 
 
         [MaxLength(50)]

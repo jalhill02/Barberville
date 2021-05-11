@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 namespace Barbervill.Models
 {
     public class ShopListItem
-    {
+    {[Key]
         public int ShopId { get; set; }
-        public string FullName { get; set; }
+        //public string FullName { get; set; }
 
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
+        //[Display(Name = "Created")]
+        //public DateTimeOffset CreatedUtc { get; set; }
        
 
-        [Required]
+        
         public string ShopName { get; set; }
 
-        [Required]
+      
         public string ShopLocation { get; set; }
-        public string Menu { get; set; }
+        //public string Menu { get; set; }
     }
 }

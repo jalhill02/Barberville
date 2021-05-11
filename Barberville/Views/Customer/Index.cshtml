@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Barbervill.Models.AppointmentItemList>
+﻿@model IEnumerable<Barbervill.Models.CustomerListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AppointmentId)
+            @Html.DisplayNameFor(model => model.CustomerId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -23,28 +23,13 @@
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Time)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShopName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShopLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Menu)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AppointmentId)
+            @Html.DisplayFor(modelItem => item.CustomerId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
@@ -54,21 +39,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShopName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShopLocation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Menu)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

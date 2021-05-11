@@ -14,14 +14,13 @@ namespace Barberville.Controllers
         // GET: Shop
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ShopService((userId));
+            var service = CreateShopService();
             var model = service.GetShop();
 
             return View(model);
         }
 
-        public ActionResult create()
+        public ActionResult Create()
         {
             return View();
         }
@@ -30,6 +29,7 @@ namespace Barberville.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ShopCreate model)
         {
+            
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateShopService();

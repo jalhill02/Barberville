@@ -21,7 +21,7 @@ namespace Barberville.Controllers
             return View(model);
         }
 
-        public ActionResult create()
+        public ActionResult Create()
         {
             return View();
         }

@@ -21,7 +21,7 @@ namespace Barberville.Services
             var entity =
                 new Customer()
                 {
-
+                    OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     PhoneNumber = model.PhoneNumber,
@@ -48,7 +48,8 @@ namespace Barberville.Services
                                 new CustomerListItem
                                 {
                                     CustomerId = e.CustomerId,
-                                    FullName = e.FullName,
+                                    FirstName = e.FirstName,
+                                    LastName = e.LastName,
                                  
                                 }
                         );
@@ -66,7 +67,9 @@ namespace Barberville.Services
                 return new CustomerDetails
                 {
                     CustomerId = entity.CustomerId,
-                    FullName = entity.FullName,
+                    FistName = entity.FirstName,
+                    LastName = entity.LastName,
+                    PhoneNumber = entity.PhoneNumber
                  
 
                 };

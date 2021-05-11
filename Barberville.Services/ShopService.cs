@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Barberville.Services
 {
+
     public class ShopService
     {
         private readonly Guid _userId;
@@ -21,7 +22,7 @@ namespace Barberville.Services
             var entity =
                 new shop()
                 {
-
+                    OwnerId = _userId,
                     ShopId   = model.ShopId,
                     ShopName = model.ShopName,
                     ShopLocation = model.ShopLocation,

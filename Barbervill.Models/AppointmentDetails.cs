@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Barbervill.Models
 {
-    class AppointmentDetails
+    public class AppointmentDetails
     {
         public int BarberName { get; set; }
         public string ShopName { get; set; }

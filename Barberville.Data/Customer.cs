@@ -20,8 +20,8 @@ namespace Barberville.Data
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        [Display(Name = "Full Name")]
-        public string FullName { get; }
+        //[Display(Name = "Full Name")]
+        //public string FullName { get; }
 
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }

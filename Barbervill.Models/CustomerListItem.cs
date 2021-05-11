@@ -10,18 +10,23 @@ namespace Barbervill.Models
     public class CustomerListItem
     {
         public int CustomerId { get; set; }
-        public string FullName { get; set; }
 
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
-        [Required]
-        public int ShopId { get; set; }
+        public string FirstName { get; set; }
 
-        [Required]
-        public string ShopName { get; set; }
+        public string LastName { get; set; }
 
-        [Required]
-        public string ShopLocation { get; set; }
-        public string Menu { get; set; }
+        public string PhoneNumber { get; set; }
+
+        //[Display(Name = "Created")]
+        //public DateTimeOffset CreatedUtc { get; set; }
+        //[Required]
+        //public int ShopId { get; set; }
+
+        //[Required]
+        //public string ShopName { get; set; }
+
+        //[Required]
+        //public string ShopLocation { get; set; }
+        //public string Menu { get; set; }
     }
 }

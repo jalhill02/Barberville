@@ -21,7 +21,8 @@ namespace Barberville.Services
             var entity =
                 new Barber()
                 {
-
+                    OwnerId = _userId,
+                    BarberId = model.BarberId,    //Should I make my userId == barberId/Shopiid/CustomerId?
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                   //  ShopId = model.ShopId,
@@ -49,7 +50,7 @@ namespace Barberville.Services
                                 new BarberList
                                 {
                                     BarberId = e.BarberId,
-                                    FullName = e.FullName,
+                                   // FullName = e.FullName,
                              //       ShopName = e.Shop.ShopName
                                 }
                         );
@@ -65,6 +66,7 @@ namespace Barberville.Services
 
                 return new BarberDetails
                 {
+
                     BarberId = entity.BarberId,
                     FullName = entity.FullName,
                     

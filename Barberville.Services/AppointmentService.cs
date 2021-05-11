@@ -21,7 +21,7 @@ namespace Barberville.Services
             var entity =
                 new Appointment()
                 {
-
+                    OwnerId = _userId,
                     Time = model.Time,
                     BarberId = model.BarberId,
                     ShopId = model.ShopId,
@@ -49,7 +49,9 @@ namespace Barberville.Services
                                 new AppointmentItemList
                                 {
                                     Time = e.Time,
-                                    CustomerName = e.Customer.FullName,
+                                    FirstName = e.Customer.FirstName,
+                                    LastName = e.Customer.LastName,
+                                    PhoneNumber = e.Customer.PhoneNumber,
                                     ShopLocation = e.Shop.ShopLocation
                                 }
                         );

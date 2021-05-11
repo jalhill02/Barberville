@@ -23,6 +23,6 @@ namespace Barberville.Data
 
      
 
-        public string Services { get; set; }
+        //public string Services { get; set; }
     }
 }
