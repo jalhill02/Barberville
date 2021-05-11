@@ -26,6 +26,9 @@ namespace Barberville.Services
                     ShopId   = model.ShopId,
                     ShopName = model.ShopName,
                     ShopLocation = model.ShopLocation,
+                    BarberName = model.BarberName,
+                    CreatedUtc = model.CreatedUtc,
+                    Services = model.Services
                 
 
                 };
@@ -51,7 +54,9 @@ namespace Barberville.Services
                                 {
                                     ShopId = e.ShopId,
                                     ShopName = e.ShopName,
-                                    ShopLocation = e.ShopLocation
+                                    ShopLocation = e.ShopLocation,
+                                    BarberName = e.BarberName,
+                                    Services = e.Services
                                 }
                         );
 
@@ -70,7 +75,9 @@ namespace Barberville.Services
                     ShopId = entity.ShopId,
                     ShopName = entity.ShopName,
                     ShopLocation = entity.ShopLocation,
-                  
+                    BarberName = entity.BarberName,
+                    Services = entity.Services
+
 
                 };
             }
@@ -82,9 +89,14 @@ namespace Barberville.Services
             {
                 var entity = ctx.Shops.Single(e => e.ShopId == model.ShopId && e.OwnerId == _userId);
 
-                entity.ShopLocation = model.ShopLocation;
+               
                 entity.ShopName = model.ShopName;
-  
+                entity.ShopLocation = model.ShopLocation;
+                entity.BarberName = model.BarberName;
+                entity.Services = model.Service;
+                 
+
+
                 return ctx.SaveChanges() == 1;
 
 

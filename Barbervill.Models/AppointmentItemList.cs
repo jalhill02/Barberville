@@ -28,6 +28,6 @@ namespace Barbervill.Models
 
         [Required]
         public string ShopLocation { get; set; }
-        public string Menu { get; set; }
+        public string BarberName { get; set; }
     }
 }

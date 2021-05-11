@@ -25,7 +25,10 @@ namespace Barberville.Services
                     BarberId = model.BarberId,    //Should I make my userId == barberId/Shopiid/CustomerId?
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                  //  ShopId = model.ShopId,
+                    ShopName = model.ShopName,
+                    Services = model.Services,
+                    FullName = model.FullName
+                  
              
 
                 };
@@ -49,9 +52,13 @@ namespace Barberville.Services
                             e =>
                                 new BarberList
                                 {
-                                    BarberId = e.BarberId,
-                                   // FullName = e.FullName,
-                             //       ShopName = e.Shop.ShopName
+                                 
+                                    BarberId = e.BarberId,    //Should I make my userId == barberId/Shopiid/CustomerId?
+                                    FirstName = e.FirstName,
+                                    LastName = e.LastName,
+                                    ShopName = e.ShopName,
+                                    Services = e.Services,
+                                    FullName = e.FullName
                                 }
                         );
 
@@ -67,10 +74,14 @@ namespace Barberville.Services
                 return new BarberDetails
                 {
 
-                    BarberId = entity.BarberId,
-                    FullName = entity.FullName,
-                    
-                    
+                 
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    ShopName = entity.ShopName,
+                    Services = entity.Services,
+                   
+
+
                 };
             }
         }
@@ -81,9 +92,14 @@ namespace Barberville.Services
             {
                 var entity = ctx.Barbers.Single(e => e.BarberId == model.BarberId && e.OwnerId == _userId);
 
+
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
-               // entity.ShopId = model.ShopId;
+                entity.ShopName = model.ShopName;
+                entity.Services = model.Services;
+                entity.FullName = model.FullName;
+                entity.ShopLocation = model.ShopLocation;
+                 
                 return ctx.SaveChanges() == 1;
 
 

@@ -9,25 +9,22 @@ namespace Barbervill.Models
 {
     public class AppointmentCreate
     {
+        //[Key]
+        //public int AppointmentId { get; set; }
         [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         public string CustomerName { get; set; }
 
-        [Required]
         public int BarberId { get; set; }
 
-        [Required]
         public int ShopId { get; set; }
 
-        [Required]
         public int CustomerId { get; set; }
 
-        [Required]
-  
         public DateTime Time { get; set; }
 
-        [MaxLength(50)]
-        public string Content { get; set; }
+        public string PhoneNumber { get; set; }
+
+        //[MaxLength(50)]
+        //public string Content { get; set; }
     }
 }

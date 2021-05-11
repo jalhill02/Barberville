@@ -14,13 +14,14 @@ namespace Barbervill.Models
 
         //[Display(Name = "Created")]
         //public DateTimeOffset CreatedUtc { get; set; }
-       
 
-        
+        public string BarberName { get; set; }
+
         public string ShopName { get; set; }
 
       
         public string ShopLocation { get; set; }
-        //public string Menu { get; set; }
+
+        public string Services { get; set; }
     }
 }

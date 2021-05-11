@@ -25,10 +25,16 @@ namespace Barberville.Data
         public string LastName { get; set; }
 
         [Display(Name = "Full Name")]
-        public string FullName { get; }
+        public string FullName { get; set; }
 
-       // [Key, Column(Order = 1)]
-      //  public int ShopId { get; set; }
+        public string ShopName { get; set; }
+
+        public string Services { get; set; }
+
+        public string ShopLocation { get; set; }
+
+        // [Key, Column(Order = 1)]
+        //  public int ShopId { get; set; }
 
         //public virtual shop Shop { get; set; }
 

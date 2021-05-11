@@ -16,6 +16,8 @@ namespace Barbervill.Models
         [MaxLength(50, ErrorMessage = "There are too many characters in thes field")]
         public string ShopName { get; set; }
 
+        public string BarberName { get; set; }
+
         [MaxLength(10000)]
         public string Services { get; set; }
 

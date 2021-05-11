@@ -58,12 +58,50 @@
     <Compile Include="Barber.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202105101753586_InitialCreate.cs" />
+    <Compile Include="Migrations\202105101753586_InitialCreate.Designer.cs">
+      <DependentUpon>202105101753586_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111230168_initial.cs" />
+    <Compile Include="Migrations\202105111230168_initial.Designer.cs">
+      <DependentUpon>202105111230168_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111617238_updated barber.cs" />
+    <Compile Include="Migrations\202105111617238_updated barber.Designer.cs">
+      <DependentUpon>202105111617238_updated barber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111641402_updateBarber.cs" />
+    <Compile Include="Migrations\202105111641402_updateBarber.Designer.cs">
+      <DependentUpon>202105111641402_updateBarber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105111716025_updatedShop.cs" />
+    <Compile Include="Migrations\202105111716025_updatedShop.Designer.cs">
+      <DependentUpon>202105111716025_updatedShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="shop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105101753586_InitialCreate.resx">
+      <DependentUpon>202105101753586_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111230168_initial.resx">
+      <DependentUpon>202105111230168_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111617238_updated barber.resx">
+      <DependentUpon>202105111617238_updated barber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111641402_updateBarber.resx">
+      <DependentUpon>202105111641402_updateBarber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105111716025_updatedShop.resx">
+      <DependentUpon>202105111716025_updatedShop.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

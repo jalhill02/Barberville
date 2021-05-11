@@ -21,7 +21,13 @@ namespace Barberville.Data
         [Required]
         public string ShopLocation { get; set; }
 
-     
+        public string BarberName { get; set; }
+
+        public string Services { get; set; }
+
+        public DateTime CreatedUtc { get; set; }
+
+
 
         //public string Services { get; set; }
     }

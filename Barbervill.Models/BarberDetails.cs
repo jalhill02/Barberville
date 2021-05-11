@@ -12,15 +12,19 @@ namespace Barbervill.Models
         public int BarberId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
-        public int AppointmentId { get; set; }
+       
+
+        //public int AppointmentId { get; set; }
 
         public string ShopName { get; set; }
 
       
         public string ShopLocation { get; set; }
-        public string services { get; set; }
+        public string Services { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

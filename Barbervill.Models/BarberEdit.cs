@@ -15,6 +15,7 @@ namespace Barbervill.Models
         public int ShopId { get; set; }
         public string ShopName { get; set; }
         public string ShopLocation { get; set; }
+        public string Services { get; set; }
 
 
     }

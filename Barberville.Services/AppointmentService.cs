@@ -22,11 +22,14 @@ namespace Barberville.Services
                 new Appointment()
                 {
                     OwnerId = _userId,
-                    Time = model.Time,
+                    // AppointmentId = model.AppointmentId,
                     BarberId = model.BarberId,
                     ShopId = model.ShopId,
-                    CustomerId = model.CustomerId
-
+                    CustomerId = model.CustomerId,
+                    Time = model.Time,
+                    Service = "",
+                    CreatedUtc = DateTimeOffset.Now,
+                    PhoneNumber = model.PhoneNumber
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,11 +51,12 @@ namespace Barberville.Services
                             e =>
                                 new AppointmentItemList
                                 {
-                                    Time = e.Time,
+                                    AppointmentId = e.AppointmentId,
                                     FirstName = e.Customer.FirstName,
                                     LastName = e.Customer.LastName,
                                     PhoneNumber = e.Customer.PhoneNumber,
-                                    ShopLocation = e.Shop.ShopLocation
+                                    ShopLocation = e.Shop.ShopLocation,
+                                    BarberName = e.Barber.FirstName
                                 }
                         );
 
@@ -60,20 +64,24 @@ namespace Barberville.Services
             }
         }
 
-        public BarberDetails GetAppointmentById(int id)
+        public AppointmentDetails GetAppointmentById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Barbers.Single(e => e.BarberId == id && e.OwnerId == _userId);
+                var entity = ctx.Appointments.Single(e => e.AppointmentId == id && e.OwnerId == _userId);
 
-                return new BarberDetails
+                return new AppointmentDetails
                 {
-                    BarberId = entity.BarberId,
-                    FullName = entity.FullName,
-                   // ShopName = entity.Shop.ShopName,
-                    //ShopLocation = entity.Shop.ShopLocation,
+                    AppointmentId = entity.AppointmentId,
+                    BarberName = entity.Barber.FirstName,
+                    ShopLocation = entity.Shop.ShopLocation,
+                    ShopName = entity.Shop.ShopName,
+                    DateTime = entity.Time,
+                    services = entity.Service
 
                 };
+                    
+   
             }
         }
 
@@ -85,7 +93,8 @@ namespace Barberville.Services
 
                 entity.AppointmentId = model.AppointmentId;
                 entity.Time = model.DateTime;
-                entity.BarberId = model.BarberId;
+                entity.Service = model.Services;
+                // entity.BarberId = model.BarberId;
                 return ctx.SaveChanges() == 1;
 
 

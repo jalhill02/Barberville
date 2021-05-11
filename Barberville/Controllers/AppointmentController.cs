@@ -68,10 +68,11 @@ namespace Barberville.Controllers
             var model =
                 new AppointmentEdit
                 {
-                  AppointmentId = detail.AppointmentId,
+                 AppointmentId = detail.AppointmentId,
                   Services = detail.services,
-                  BarberId = detail.BarberId,
-                  CustomerId = detail.BarberId
+                  //BarberId = detail.BarberId,
+                 // CustomerId = detail.BarberId,
+                 DateTime = detail.DateTime
 
                 };
             return View(model);
@@ -86,7 +87,7 @@ namespace Barberville.Controllers
             if (!ModelState.IsValid) return View(model);
 
 
-            if (model.ShopId != id)
+            if (model.AppointmentId != id)
 
             {
                 ModelState.AddModelError("", "Id Mismatch");

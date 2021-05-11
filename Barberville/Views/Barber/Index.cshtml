@@ -15,22 +15,25 @@
             @Html.DisplayNameFor(model => model.BarberId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.FullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShopId)
+            @Html.DisplayNameFor(model => model.Services)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShopName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShopLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Menu)
         </th>
         <th></th>
     </tr>
@@ -41,13 +44,19 @@
             @Html.DisplayFor(modelItem => item.BarberId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ShopId)
+            @Html.DisplayFor(modelItem => item.Services)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShopName)
@@ -56,12 +65,9 @@
             @Html.DisplayFor(modelItem => item.ShopLocation)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Menu)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.BarberId }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.BarberId }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.BarberId })
         </td>
     </tr>
 }

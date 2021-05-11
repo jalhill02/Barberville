@@ -70,6 +70,8 @@ namespace Barberville.Controllers
                     ShopId = detail.ShopId,
                     ShopName = detail.ShopName,
                     ShopLocation = detail.ShopLocation,
+                    BarberName = detail.BarberName,
+                    Service = detail.Services
                   
                 };
             return View(model);
